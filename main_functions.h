@@ -105,3 +105,49 @@ void print_registers(int* reg){
     }
     printf(" }\n");
 }
+
+void op_run(int mem){
+    //memory[mem]
+    //printf("\nopcode is = %s\n\n",memory[mem]);
+
+    char opcode[10],arg1[10],arg2[10];
+
+            int j = 0,k = 0;
+            while(memory[mem][k] != ' ' && memory[mem][k] != '\0'){
+                *(opcode + j) = memory[mem][k];
+                //printf("%c",*(opcode + j));
+                j++;
+                k++;
+            }
+            *(opcode + j) = '\0';
+            //printf("\n");
+
+            while(memory[mem][k] == ' '){       //skip spaces...
+                k++;
+            }
+
+            j = 0;
+            while(memory[mem][k] != ' ' && memory[mem][k] != '\0'){
+                *(arg1 + j) = memory[mem][k];
+                //printf("%c",*(arg1 + j));
+                j++;
+                k++;
+            }
+            *(arg1 + j) = '\0';
+            //printf("\n");
+
+            while(memory[mem][k] == ' '){       //skip spaces...
+                k++;
+            }
+
+            j = 0;
+            while(memory[mem][k] != ' ' && memory[mem][k] != '\0'){
+                *(arg2 + j) = memory[mem][k];
+                //printf("%c",*(arg2 + j));
+                j++;
+                k++;
+            }
+            *(arg2 + j) = '\0';
+
+            pass(opcode,arg1,arg2);	// have to implement
+}
