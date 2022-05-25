@@ -106,6 +106,61 @@ void print_registers(int* reg){
     printf(" }\n");
 }
 
+void pass(char *opcode,char *arg1,char *arg2){
+    if(strcmp(opcode,"mov")==0){
+        //printf("\ncall mov\n");
+        mov(stringtoenum(arg1),stringtoenum(arg2));
+
+    }
+    else if(strcmp(opcode,"movv")==0){
+        //printf("\ncall movv\n");
+        movv(stringtoenum(arg1),char_toint(arg2));
+    }
+    else if(strcmp(opcode,"load")==0){
+        //printf("\ncall load\n");
+        load(stringtoenum(arg1),char_toint(arg2));
+    }
+    else if(strcmp(opcode,"loadr")==0){
+        //printf("\ncall loadr\n");
+        loadr(stringtoenum(arg1),stringtoenum(arg2));
+    }
+    else if(strcmp(opcode,"store")==0){
+        //printf("\ncall store\n");
+        store(char_toint(arg1),stringtoenum(arg2));
+    }
+    else if(strcmp(opcode,"storer")==0){
+        //printf("\ncall storer\n");
+        storer(stringtoenum(arg1),stringtoenum(arg2));
+    }
+    else if(strcmp(opcode,"add")==0){
+        //printf("\ncall add\n");
+        add(stringtoenum(arg1),stringtoenum(arg2));
+    }
+    else if(strcmp(opcode,"sub")==0){
+        //printf("\ncall sub\n");
+        sub(stringtoenum(arg1),stringtoenum(arg2));
+    }
+    else if(strcmp(opcode,"mod")==0){
+        //printf("\ncall mod\n");
+        mod(stringtoenum(arg1),stringtoenum(arg2));
+    }
+    else if(strcmp(opcode,"call")==0){
+        //printf("\ncall call\n");
+        call(char_toint(arg1));
+    }
+    else if(strcmp(opcode,"ret")==0){
+        //printf("\ncall ret\n");
+        ret();
+    }
+    else if(strcmp(opcode,"out")==0){
+        //printf("\ncall out\n");
+        out(stringtoenum(arg1));
+    }
+    else{
+        printf("Function not found\n");
+    }
+}
+
 void op_run(int mem){
     //memory[mem]
     //printf("\nopcode is = %s\n\n",memory[mem]);

@@ -133,3 +133,59 @@ char* int_Tochar(int x){                // N O T E --> H / W
 
     return res;
 }
+
+
+int stringtoenum(char *arr){
+      if(strcmp(arr,"a")==0){
+          //printf("\na\n");
+          return 0;
+      }
+      else if(strcmp(arr,"b")==0){
+          //printf("\nb\n");
+          return 1;
+      }
+      else if(strcmp(arr,"c")==0){
+          //printf("\nc\n");
+          return 2;
+      }
+      else if(strcmp(arr,"d")==0){
+          //printf("\nd\n");
+          return 3;
+      }
+      else if(strcmp(arr,"e")==0){
+          //printf("\ne\n");
+          return 4;
+      }
+      else if(strcmp(arr,"f")==0){
+          //printf("\nf\n");
+          return 5;
+      }
+      else if(strcmp(arr,"sp")==0){
+          //printf("\nsp\n");
+          return 6;
+      }
+      else if(strcmp(arr,"acc")==0){
+          //printf("\nacc\n");
+          return 7;
+      }
+      else if(strcmp(arr,"pc")==0){
+          //printf("\npc\n");
+          return 8;
+      }
+      else if(strcmp(arr,"ivec")==0){
+          //printf("\nivec\n");
+          return 9;
+      }
+      else if(strcmp(arr,"int")==0){
+          //printf("\nInt\n");
+          return 10;
+      }
+      else if(strcmp(arr,"timer")==0){
+          //printf("\ntimer\n");
+          return 11;
+      }
+      else if(strcmp(arr,"halt")==0){
+          //printf("\nhalt\n");
+          return 12;
+      }
+}
