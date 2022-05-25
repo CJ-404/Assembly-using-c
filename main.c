@@ -33,7 +33,7 @@ int main(){
     initialize_reg();
 
 	//open & store the assembly file
-	FILE *fd = fopen("prog.asm","r");
+	FILE *fd = fopen("assembly.asm","r");
     store_into(fd,memory);
 	fclose(fd);
 	
