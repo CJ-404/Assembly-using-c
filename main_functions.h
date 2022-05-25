@@ -25,6 +25,7 @@ void store_into(FILE *fd,char** memory){
         exit(1);
     }
 
+    int pc_initialized = 0;
     while(!feof(fd)){
         char ch;
         char command[70];
@@ -58,6 +59,11 @@ void store_into(FILE *fd,char** memory){
 
             mem_address = char_toint(num);
             //printf("mm = %d\n",mem_address);
+
+            if(!pc_initialized ){
+                reg[pc] = mem_address;
+                pc_initialized=1;
+            }
 
             //store in the memory...
             int j = 0;

@@ -34,7 +34,7 @@ int main(){
 
 	//open & store the assembly file
 	FILE *fd = fopen("prog.asm","r");
-    	store_into(fd,memory);
+    store_into(fd,memory);
 	fclose(fd);
 	
 	//run virtual machine
