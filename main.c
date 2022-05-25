@@ -8,6 +8,24 @@ Registers {a=0, b, c, d, e,f,sp,acc, pc, ivec, Int, timer, halt};     	   int --
 
 */
 
+
+void runvm(){
+
+    while(!reg[halt]){
+        int mem = reg[pc];
+        op_run(mem);
+
+        reg[timer] -= 1;
+        if(reg[Int] == 1 && reg[timer] == 0){
+            reg[sp] += 1;
+            //memory[reg[sp]] = reg[pc];        --> N O T E ....
+            strcpy(memory[reg[sp]],int_Tochar(reg[pc]));
+            reg[pc] = reg[ivec];
+            reg[Int] = 0;
+        }
+    }
+}
+
 int main(){
 
 	// initialize the memory...
