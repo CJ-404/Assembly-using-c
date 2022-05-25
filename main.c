@@ -34,7 +34,7 @@ int main(){
 
 	//open & store the assembly file
 	FILE *fd = fopen("assembly.asm","r");
-    store_into(fd,memory);
+    store_in_memory(fd);
 	fclose(fd);
 	
 	//run virtual machine

@@ -15,7 +15,7 @@ void initialize_reg(){
     }
 }
 
-void store_into(FILE *fd,char** memory){
+void store_in_memory(FILE *fd){
 
     if(fd){
         printf("FILE opened\n");
