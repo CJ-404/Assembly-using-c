@@ -29,8 +29,8 @@ void runvm(){
 int main(){
 
 	// initialize the memory...
-    	initialize_memory(memory,30);
-    	initialize_reg();
+    initialize_memory(memory,30);
+    initialize_reg();
 
 	//open & store the assembly file
 	FILE *fd = fopen("prog.asm","r");

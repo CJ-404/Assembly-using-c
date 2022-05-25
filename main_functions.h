@@ -162,6 +162,30 @@ void pass(char *opcode,char *arg1,char *arg2){
         //printf("\ncall out\n");
         out(stringtoenum(arg1));
     }
+    else if(strcmp(opcode,"push")==0){
+        //printf("\ncall push\n");
+        push(stringtoenum(arg1));
+    }
+    else if(strcmp(opcode,"pop")==0){
+        //printf("\ncall pop\n");
+        pop(stringtoenum(arg1));
+    }
+    else if(strcmp(opcode,"jmp")==0){
+        //printf("\ncall jmp\n");
+        jmp(char_toint(arg1));
+    }
+    else if(strcmp(opcode,"jnz")==0){
+        //printf("\ncall jnz\n");
+        jnz(char_toint(arg1),stringtoenum(arg2));
+    }
+    else if(strcmp(opcode,"halt")==0){
+        //printf("\ncall halt\n");
+        holt();
+    }
+    else if(strcmp(opcode,"print")==0){
+        //printf("\ncall print\n");
+        print(arg1);
+    }
     else{
         printf("Function not found\n");
     }

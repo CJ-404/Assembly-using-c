@@ -73,3 +73,45 @@ void out(int reg1){
     printf("%d\n",reg[reg1]);
 	reg[pc]=reg[pc]+1;
 }
+
+
+void push(int reg1){
+    reg[sp]=reg[sp]+1;
+	strcpy(memory[reg[sp]],int_Tochar(reg[reg1]));
+	reg[pc]=reg[pc]+1;
+}
+	
+
+void pop(int reg1){
+    reg[reg1]=char_toint(memory[reg[sp]]);
+	reg[sp]=reg[sp]-1;
+	reg[pc]=reg[pc]+1;
+}
+	
+
+void jmp(int address){
+    reg[pc]=address;
+}
+	
+
+void jnz(int address,int reg1){
+    if (reg[reg1]!=0){
+        reg[pc]=address;
+    }	
+	else{
+        reg[pc]=reg[pc]+1;
+
+    }
+}
+	
+
+void holt(){         //   --->   holt = halt  (conflict -> halt function & halt reg enum )...
+    reg[halt]=1;
+	reg[pc]=reg[pc]+1;
+}
+
+
+void print(char* word){
+    printf("%s",word);
+    reg[pc] = reg[pc]+1;
+}
