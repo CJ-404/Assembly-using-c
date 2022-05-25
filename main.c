@@ -29,7 +29,7 @@ void runvm(){
 int main(){
 
 	// initialize the memory...
-    initialize_memory(memory,30);
+    initialize_memory(30);
     initialize_reg();
 
 	//open & store the assembly file
@@ -40,8 +40,8 @@ int main(){
 	//run virtual machine
 	runvm();
 
-	print_memory(memory);
-	print_registers(reg);
+	print_memory();
+	print_registers();
 
 
 	printf("\nEnd of MY Virtual Machine\n");

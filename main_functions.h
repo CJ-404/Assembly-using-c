@@ -1,6 +1,6 @@
 #include"assembly_functions.h"
 
-void initialize_memory(char** memory,int max_len){
+void initialize_memory(int max_len){
 
     for(int i = 0;i<SIZE;i++){
         *(memory+i) = (char*)malloc(max_len*sizeof(char));
@@ -79,7 +79,7 @@ void store_into(FILE *fd,char** memory){
 
 }
 
-void print_memory(char** memory){
+void print_memory(){
 
     printf("\n{ ");
     for(int i = 0;i<SIZE;i++){
@@ -100,7 +100,7 @@ void print_memory(char** memory){
 
 }
 
-void print_registers(int* reg){
+void print_registers(){
 
     printf("\n{ ");
     for(int i = 0;i<REG_SIZE;i++){
